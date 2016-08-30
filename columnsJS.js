@@ -20,7 +20,7 @@
     };
 
     _.settings = $.extend({}, _.defaults, options);
-    
+
     _.init();
   }
 
@@ -109,7 +109,7 @@
     }
   };
 
-  $.fn.fsColumns = function(options) {
+  $.fn.columns = function(options) {
     this.each(function() {
       new Columns(this, options);
     });
