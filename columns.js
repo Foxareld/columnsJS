@@ -84,14 +84,18 @@
     distributeItems: function() {
       var _ = this,
       inc = 1,
-      curr
+      curr,
+      rem
       ;
 
       $.each(_.items, function(i) {
         if((i+1) > _.itemsPerColumn) { //start on item for 2nd column, i.e. item 6 on a 3 column list with 5 items per column
 
+          rem = (i+1) % _.itemsPerColumn;
+
           //loop through items, when remainder is 1 move to next column, i.e. move to 3rd column on item 11 of a 3 column list with 5 items per column
-          if((i+1) % _.itemsPerColumn == 1) {
+          //special condition if there's only 1 column per item, in which case the remainder will always be 0
+          if(rem == 1 || (_.itemsPerColumn == 1 && rem == 0)) {
             inc++;
 
             if(_.settings.addWrapper) {
