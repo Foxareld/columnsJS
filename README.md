@@ -36,7 +36,7 @@ $(".my-list").columns({
  columns: 2                      
 });
 
-$(".my-list").columns({
+$(".my-alt-list").columns({
  columns: 3                      
 });
 ```
